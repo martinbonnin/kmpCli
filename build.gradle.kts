@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform").version("1.3.70")
+    kotlin("multiplatform").version("1.3.71")
     id("application")
 }
 
@@ -12,14 +12,6 @@ repositories {
 }
 
 kotlin {
-    jvm {
-    }
-    js {
-        nodejs()
-    }
-
-    linuxX64()
-    mingwX64()
     macosX64 {
         binaries {
             executable("martinCli", listOf(DEBUG)) {
@@ -30,7 +22,8 @@ kotlin {
     sourceSets {
         get("commonMain").apply {
             dependencies {
-                implementation("com.github.ajalt:clikt-multiplatform:2.6.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5")
             }
         }
     }
