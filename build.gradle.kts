@@ -15,7 +15,7 @@ repositories {
 kotlin {
     macosX64 {
         binaries {
-            executable("martinCli", listOf(DEBUG)) {
+            executable("kmpCli", listOf(DEBUG)) {
                 entryPoint("net.mbonnin.kmpcli.main")
             }
         }
@@ -23,8 +23,6 @@ kotlin {
     sourceSets {
         get("commonMain").apply {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5-native-mt")
                 implementation("io.ktor:ktor-client-core-native:1.3.2")
                 implementation("io.ktor:ktor-client-logging-native:1.3.2")
             }
