@@ -4,6 +4,7 @@ plugins {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
@@ -22,8 +23,16 @@ kotlin {
     sourceSets {
         get("commonMain").apply {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5-native-mt")
+                implementation("io.ktor:ktor-client-core-native:1.3.2")
+                implementation("io.ktor:ktor-client-logging-native:1.3.2")
+            }
+        }
+        macosX64().compilations["main"].defaultSourceSet {
+            dependencies {
+                implementation("io.ktor:ktor-client-core-macosx64:1.3.2")
+                implementation("io.ktor:ktor-client-curl:1.3.2")
             }
         }
     }
