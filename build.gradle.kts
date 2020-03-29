@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform").version("1.3.71")
+    kotlin("multiplatform").version("1.3.61")
     id("application")
 }
 
@@ -23,16 +23,16 @@ kotlin {
     sourceSets {
         get("commonMain").apply {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5-native-mt")
-                implementation("io.ktor:ktor-client-core-native:1.3.2")
-                implementation("io.ktor:ktor-client-logging-native:1.3.2")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5-native-mt")
+                implementation("io.ktor:ktor-client-core-native:1.2.6")
+                implementation("io.ktor:ktor-client-logging-native:1.2.6")
             }
         }
         macosX64().compilations["main"].defaultSourceSet {
             dependencies {
-                implementation("io.ktor:ktor-client-core-macosx64:1.3.2")
-                implementation("io.ktor:ktor-client-curl:1.3.2")
+                implementation("io.ktor:ktor-client-core-macosx64:1.2.6")
+                implementation("io.ktor:ktor-client-curl:1.2.6")
             }
         }
     }

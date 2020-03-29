@@ -4,16 +4,16 @@ import io.ktor.client.HttpClient
 import io.ktor.client.features.logging.LogLevel
 import io.ktor.client.features.logging.Logger
 import io.ktor.client.features.logging.Logging
+import io.ktor.client.response.HttpResponse
 import io.ktor.client.request.get
 import io.ktor.client.request.put
-import io.ktor.client.statement.HttpResponse
 import kotlinx.coroutines.*
 import platform.CoreFoundation.CFRunLoopRun
 import platform.darwin.*
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
-@OptIn(InternalCoroutinesApi::class)
+@UseExperimental(kotlinx.coroutines.InternalCoroutinesApi::class)
 val mainDispatcher: CoroutineDispatcher = object : CoroutineDispatcher(), Delay {
     override fun dispatch(context: CoroutineContext, block: Runnable) {
         val queue = dispatch_get_main_queue()
